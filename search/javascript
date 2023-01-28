@@ -1,0 +1,20 @@
+<script>
+        document.addEventListener("DOMContentLoaded", function(){
+            
+
+            setInterval( function () {
+                const d = new Date();
+                let minutes = d.getMinutes();
+                let seconds = d.getSeconds();
+                console.log(minutes,seconds);
+                const btn = document.getElementById("button");
+                
+                if (minutes == 13 && seconds ==45 || minutes ==33  && seconds ==45|| minutes==43  && seconds ==45|| minutes==58  && seconds ==45)
+                {
+                     btn.click();
+                }
+                ;},1000);
+        })
+        
+    
+    </script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+        .trends{
+            display:flex;
+            justify-content:space-evenly;
+        }
+        .trends > div >p{
+            border-bottom : 1 px solid black;
+        }
+        #timer{
+            margin-top:5px;
+            width:20px;
+        }
+
+    </style>
+   
+
+</head>
+<body>
+    <div class="trends">
+        <div>
+            <p>3 Stars</p>
+            {% for 3stars in 3star%}
+            <p>{{3stars.symbol}}</p>
+            {%endfor%}
+        </div>
+
+        <div>
+            <p>4 Starts</p>
+            {% for 4stars in 4star%}
+            <p>{{4stars.symbol}}</p>
+            {%endfor%}
+        </div>
+
+        <div>
+            <p>5 Starts</p>
+            {% for 5stars in 5star%}
+            <p>{{4stars.symbol}}</p>
+            {%endfor%}
+        </div>
+
+
+    </div>
+   
+    <table id="customers">
+        <tr>
+            <td>Symbol</td>
+            <td>price1</td>
+            <td>price2</td>
+            <td>price3</td>
+            <td>price4</td>
+            <td>price5</td>
+            <td>price6</td>
+            <td>Trend</td>
+        </tr>
+
+        
+        {% for crypto in cryptos %}
+        <tr>
+            <td>{{ crypto.symbol }}</td>
+            <td>{{ crypto.price1 }}</td>
+            <td>{{ crypto.price2 }}</td>
+            <td>{{ crypto.price3 }}</td>
+            <td>{{ crypto.price4 }}</td>
+            <td>{{ crypto.price5 }}</td>
+            <td>{{ crypto.price6 }}</td>
+            <td>{{ crypto.trend }}</td>
+            
+
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
